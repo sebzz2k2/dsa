@@ -27,13 +27,16 @@ func (re *Array) delete(pos int){
 	re.arr= append(re.arr[:pos] , re.arr[pos+1:]...)
 }
 
+func (re *Array) display(){
+	fmt.Println(re.arr)
+}
+
 func main() {
 	a := Array{
 		max: 5,
-		arr: []int{10,21,23,89,87},
+		arr: []int{10,21,23,87},
 	}
 	a.insert(1,89)
 	a.delete(2)
-
-	fmt.Println(a.arr)
+	a.display()
 }
