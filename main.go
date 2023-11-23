@@ -40,6 +40,20 @@ func (re *Array) find(num int) int{
 	return -1
 }
 
+func (re *Array) reverse() {
+    n := len(re.arr)
+    for i := 0; i < n/2; i++ {
+        j := n - i - 1
+        if i != j {
+			// bit manupulation for fun
+            re.arr[i] = re.arr[i] ^ re.arr[j]
+            re.arr[j] = re.arr[i] ^ re.arr[j]
+            re.arr[i] = re.arr[i] ^ re.arr[j]
+        }
+    }
+}
+
+
 func main() {
 	a := Array{
 		max: 5,
@@ -49,4 +63,6 @@ func main() {
 	a.delete(2)
 	a.display()
 	fmt.Println(a.find(87))
+	a.reverse()
+	fmt.Println(a.arr)
 }
