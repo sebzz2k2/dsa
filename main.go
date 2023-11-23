@@ -31,6 +31,15 @@ func (re *Array) display(){
 	fmt.Println(re.arr)
 }
 
+func (re *Array) find(num int) int{
+	for i := 0; i < len(re.arr); i++ {
+		if re.arr[i]==num {
+			return i
+		}		
+	}
+	return -1
+}
+
 func main() {
 	a := Array{
 		max: 5,
@@ -39,4 +48,5 @@ func main() {
 	a.insert(1,89)
 	a.delete(2)
 	a.display()
+	fmt.Println(a.find(87))
 }
