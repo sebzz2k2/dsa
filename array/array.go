@@ -49,3 +49,24 @@ func (re *Array) Reverse() {
         }
     }
 }
+
+// Leetcode questions
+
+func MergeAlternately(word1 string, word2 string) string {
+	answer := ""
+	i, j := 0, 0
+	for i < len(word1) && j < len(word2) {
+		answer += string(word1[i]) + string(word2[j])
+		i++
+		j++
+	}
+	for i < len(word1) {
+		answer += string(word1[i])
+		i++
+	}
+	for j < len(word2) {
+		answer += string(word2[j])
+		j++
+	}
+	return answer
+}
