@@ -9,7 +9,7 @@ import (
 
 func main() {
 	arr := [10]int{32, 23, 54, 553, 534, 2432, 54, 12, 98, 5}
-	sorted := sort.BubbleSort(arr[:])
+	sorted := sort.InsertionSort(arr[:])
 	fmt.Println(sorted)
 
 	// fmt.Println(array.MergeAlternately("abcd", "pq"))
